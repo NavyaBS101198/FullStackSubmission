@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+   
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa {content: "hi", date: "2026-02-27T11:39:29.462Z"}
+    activate server
+    server-->>browser: Responds with status code 201 and response {"message":"note created"}
+    deactivate server
+
+
+    Note right of browser: The browser executes event handler that form submit. The event handler posts note content to /exampleapp/new_note_spa and appends the response to the HTML Content.
+
+  
